@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskMate | Student Task Manager</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>  
+
+<header>
+
+    <div class="logo">
+        📚 <span>TaskMate</span>
+    </div>
+
+    <nav>
+
+        <button onclick="showSection('dashboard')">Dashboard</button>
+
+        <button onclick="showSection('tasks')">Tasks</button>
+
+        <button onclick="showSection('notes')">Notes</button>
+
+        <button onclick="showSection('contact')">Contact</button>
+
+        <button onclick="showSection('about')">About</button>
+
+    </nav>
+    <div class="theme-switch">
+    <button id="themeToggle" onclick="toggleTheme()">
+        🌙 Dark Mode
+    </button>
+</div>
+</header>
+
+
+<section class="hero">
+
+    <h1>TaskMate Student Task Manager</h1>
+
+    <p>
+        Organize your assignments, revision notes and deadlines in one place.
+    </p>
+
+    <div id="clock"></div>
+
+</section>
+
+<section id="dashboard" class="page active">
+
+    <h2>Dashboard</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Total Tasks</h3>
+            <p id="totalTasks">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Completed</h3>
+            <p id="completedTasks">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Pending</h3>
+            <p id="pendingTasks">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Total Notes</h3>
+            <p id="totalNotes">0</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<section id="tasks" class="page">
+
+    <h2>Task Manager</h2>
+
+    <input
+        type="text"
+        id="taskInput"
+        placeholder="Enter Task">
+
+    <input
+        type="date"
+        id="taskDate">
+
+    <select id="priority">
+
+        <option>Low</option>
+
+        <option>Medium</option>
+
+        <option>High</option>
+
+    </select>
+
+    <button onclick="addTask()">
+
+        Add Task
+
+    </button>
+
+    <br><br>
+
+    <input
+        type="text"
+        id="searchTask"
+        placeholder="Search Tasks..."
+        onkeyup="searchTask()">
+
+    <ul id="taskList"></ul>
+
+</section>
+
+<section id="notes" class="page">
+
+    <h2>Notes</h2>
+
+    <input
+        type="text"
+        id="noteTitle"
+        placeholder="Note Title">
+
+    <textarea
+        id="noteContent"
+        placeholder="Write your note here..."></textarea>
+
+    <button onclick="addNote()">
+
+        Save Note
+
+    </button>
+
+    <div id="notesContainer"></div>
+
+</section>
+
+<section id="contact" class="page">
+
+    <h2>Contact Us</h2>
+
+    <form id="contactForm">
+
+        <input
+            type="text"
+            id="name"
+            placeholder="Full Name"
+            required>
+
+        <input
+            type="email"
+            id="email"
+            placeholder="Email Address"
+            required>
+
+        <textarea
+            id="message"
+            placeholder="Message"
+            required></textarea>
+
+        <button type="submit">
+
+            Send Message
+
+        </button>
+
+    </form>
+
+</section>
+
+
+<section id="about" class="page">
+
+    <h2>About TaskMate</h2>
+
+    <p>
+
+        TaskMate is a student task management system built using
+        HTML, CSS and JavaScript.
+
+    </p>
+
+    <h3>Features</h3>
+
+    <ul>
+
+        <li>Task Management</li>
+
+        <li>Notes Manager</li>
+
+        <li>Dashboard</li>
+
+        <li>Responsive Design</li>
+
+        <li>Live Clock</li>
+
+        <li>Form Validation</li>
+
+        <li>Local Storage</li>
+
+    </ul>
+
+</section>
+
+<footer>
+
+    <p>
+
+        © 2026 TaskMate | Developed by Your Name
+
+    </p>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+

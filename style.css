@@ -1,0 +1,323 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+
+body{
+    background:linear-gradient(135deg,#4facfe,#6a11cb);
+    color:#333;
+    min-height:100vh;
+
+}
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 40px;
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(10px);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+
+.logo{
+    font-size:30px;
+    font-weight:bold;
+    color:white;
+}
+
+nav{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+nav button{
+    border:none;
+    background:white;
+    color:#6a11cb;
+    padding:10px 20px;
+    border-radius:30px;
+    cursor:pointer;
+    font-weight:600;
+    transition:.3s;
+}
+
+nav button:hover{
+    background:#6a11cb;
+    color:white;
+    transform:translateY(-3px);
+}
+
+.hero{
+    width:90%;
+    margin:30px auto;
+    text-align:center;
+    padding:40px;
+    border-radius:20px;
+    background:rgba(255,255,255,.2);
+    backdrop-filter:blur(10px);
+    color:white;
+}
+
+.hero h1{
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+.hero p{
+    font-size:18px;
+}
+
+#clock{
+    margin-top:20px;
+    font-size:28px;
+    font-weight:bold;
+}
+
+/* Sections */
+.page{
+    display:none;
+    width:90%;
+    margin:30px auto;
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
+
+.page.active{
+    display:block;
+}
+
+/* Dashboard */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    margin-top:20px;
+}
+
+.card{
+    background:#4facfe;
+    color:white;
+    padding:30px;
+    border-radius:15px;
+    text-align:center;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card h3{
+    margin-bottom:15px;
+}
+
+.card p{
+    font-size:35px;
+    font-weight:bold;
+}
+
+
+input,
+textarea,
+select{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:1px solid #ccc;
+    border-radius:10px;
+    font-size:16px;
+}
+
+textarea{
+    resize:vertical;
+    min-height:120px;
+}
+
+
+button{
+    padding:12px 20px;
+    border:none;
+    border-radius:10px;
+    background:#4facfe;
+    color:white;
+    cursor:pointer;
+    transition:.3s;
+    font-size:15px;
+}
+
+button:hover{
+    background:#0077ff;
+}
+
+
+#taskList{
+    list-style:none;
+    margin-top:20px;
+}
+
+#taskList li{
+    background:#f5f5f5;
+    padding:15px;
+    margin-bottom:10px;
+    border-radius:10px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+
+.note{
+    background:#fff7cc;
+    padding:20px;
+    margin-top:20px;
+    border-left:6px solid orange;
+    border-radius:10px;
+}
+
+form{
+    display:flex;
+    flex-direction:column;
+}
+
+#about ul{
+    margin-top:20px;
+    padding-left:20px;
+}
+
+#about li{
+    margin-bottom:10px;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    color:white;
+    margin-top:40px;
+    background:rgba(255,255,255,.15);
+}
+
+@media(max-width:768px){
+
+header{
+    flex-direction:column;
+    gap:20px;
+}
+
+nav{
+    width:100%;
+    justify-content:center;
+}
+
+nav button{
+    width:100%;
+}
+
+.hero h1{
+    font-size:30px;
+}
+
+.cards{
+    grid-template-columns:1fr;
+}
+
+.page{
+    width:95%;
+}
+}
+
+/* ==========================================
+   DARK MODE
+   ========================================== */
+
+body.dark-mode {
+    background: #121212;
+    color: #f5f5f5;
+}
+
+/* Header */
+
+body.dark-mode header {
+    background: rgba(20, 20, 20, 0.9);
+}
+
+/* Hero */
+
+body.dark-mode .hero {
+    background: rgba(30, 30, 30, 0.9);
+    color: white;
+}
+
+/* Pages */
+
+body.dark-mode .page {
+    background: #1e1e1e;
+    color: #f5f5f5;
+}
+
+/* Cards */
+
+body.dark-mode .card {
+    background: #292929;
+    color: white;
+}
+
+/* Inputs */
+
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select {
+    background: #2a2a2a;
+    color: white;
+    border: 1px solid #555;
+}
+
+/* Placeholder text */
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+    color: #bbb;
+}
+
+/* Task list */
+
+body.dark-mode #taskList li {
+    background: #2a2a2a;
+    color: white;
+}
+
+/* Notes */
+
+body.dark-mode .note {
+    background: #3a350f;
+    color: white;
+}
+
+/* Footer */
+
+body.dark-mode footer {
+    background: rgba(20, 20, 20, 0.9);
+}
+
+/* Dark mode button */
+
+#themeToggle {
+    background: white;
+    color: #333;
+    font-weight: bold;
+}
+
+body.dark-mode #themeToggle {
+    background: #333;
+    color: white;
+}
