@@ -321,3 +321,64 @@ body.dark-mode #themeToggle {
     background: #333;
     color: white;
 }
+
+/* 📱 Mobile Responsive Design */
+@media (max-width: 768px) {
+
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        padding: 15px;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    nav button {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    .hero {
+        padding: 30px 15px;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    section {
+        padding: 20px 15px;
+    }
+
+    input,
+    textarea,
+    select,
+    button {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .task-container {
+        width: 100%;
+    }
+
+    .task {
+        padding: 15px;
+        margin-bottom: 10px;
+    }
+}
