@@ -33,12 +33,17 @@
         🌙 Dark Mode
     </button>
 </div>
+
+<button onclick="requestNotificationPermission()">
+    🔔 Enable Notifications
+</button>
+
 </header>
 
 
 <section class="hero">
 
-    <h1>TaskMate Student Task Manager</h1>
+    <h1>To-Do List</h1>
 
     <p>
         Organize your assignments, revision notes and deadlines in one place.
@@ -92,6 +97,10 @@
     <input
         type="date"
         id="taskDate">
+        <input
+    type="time"
+    id="taskTime"
+>
 
     <select id="priority">
 
