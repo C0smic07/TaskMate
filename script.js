@@ -99,11 +99,14 @@ function addTask() {
 
         date: date,
 
+        time: document.getElementById("taskTime").value,
+
         priority: taskPriority,
 
         completed: false,
 
         reminderSent: false
+
 
     };
 
@@ -863,3 +866,122 @@ function loadTheme() {
 // Load theme when TaskMate starts
 
 loadTheme();
+
+function checkReminders() {
+
+    const now = new Date();
+
+    tasks.forEach(task => {
+
+        if (task.completed || task.reminderSent) {
+            return;
+        }
+
+        const reminderTime = new Date(
+            `${task.date}T${task.time}`
+        );
+
+        if (now >= reminderTime) {
+
+            // Browser notification
+            if (Notification.permission === "granted") {
+
+                new Notification("🔔 TaskMate Reminder", {
+                    body: `It's time for: ${task.name}`
+                });
+
+            }
+
+            // On-screen reminder
+            alert(
+                `🔔 REMINDER\n\n${task.name}\n\nIt's time for this task!`
+            );
+
+            task.reminderSent = true;
+
+            saveTasks();
+        }
+    });
+}
+
+setInterval(checkReminders, 1000);
+
+function checkReminders() {
+    const now = new Date();
+
+    tasks.forEach(task => {
+        if (task.completed || task.reminderSent) {
+            return;
+        }
+
+        const reminderTime = new Date(`${task.date}T${task.time}`);
+
+        if (now >= reminderTime) {
+            if ("Notification" in window &&
+                Notification.permission === "granted") {
+                new Notification("🔔 TaskMate Reminder", {
+                    body: `It's time for: ${task.name}`
+                });
+            }
+
+            alert(`🔔 REMINDER\n\n${task.name}\n\nIt's time for this task!`);
+
+            task.reminderSent = true;
+            saveTasks();
+        }
+    });
+}
+
+setInterval(checkReminders, 1000);
+
+if ("Notification" in window &&
+    Notification.permission === "default") {
+    Notification.requestPermission();
+}
+
+setInterval(checkReminders, 1000);
+
+if ("Notification" in window &&
+    Notification.permission === "default") {
+    Notification.requestPermission();
+}
+
+function checkReminders() {
+    const now = new Date();
+
+    tasks.forEach(task => {
+        if (task.completed || task.reminderSent) {
+            return;
+        }
+
+        const reminderTime = new Date(`${task.date}T${task.time}`);
+
+        if (now >= reminderTime) {
+            if ("Notification" in window &&
+                Notification.permission === "granted") {
+                new Notification("🔔 TaskMate Reminder", {
+                    body: `It's time for: ${task.name}`
+                });
+            }
+
+            alert(`🔔 REMINDER\n\n${task.name}\n\nIt's time for this task!`);
+
+            task.reminderSent = true;
+            saveTasks();
+        }
+    });
+}
+
+function enableNotifications() {
+    if ("Notification" in window) {
+        Notification.requestPermission().then(permission => {
+            if (permission === "granted") {
+                alert("✅ Notifications enabled!");
+            } else {
+                alert("❌ Notifications were not enabled.");
+            }
+        });
+    } else {
+        alert("❌ Your browser does not support notifications.");
+    }
+}
