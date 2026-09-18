@@ -985,3 +985,11 @@ function enableNotifications() {
         alert("❌ Your browser does not support notifications.");
     }
 }
+
+if (Notification.permission === "granted") {
+    new Notification("TaskMate", {
+        body: "Notification test successful!"
+    });
+}
+
+Notification.requestPermission();
